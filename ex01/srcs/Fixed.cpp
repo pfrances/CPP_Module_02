@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 15:18:18 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/04 21:37:34 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Fixed::Fixed(const float value)
 	int		integerPart = static_cast<int>(value);
 	float	fractionalPart = value - static_cast<float>(integerPart);
 
+	if (value < 0 && fractionalPart != 0) {
+		integerPart -= 1;
+		fractionalPart = 1 + fractionalPart;
+	}
+	
 	int fixedFractionalPart = 0;
 	float fraction = 0.5f;
 	for (int i = 0; i < fractionalBits_; ++i) {
@@ -74,11 +79,11 @@ void	Fixed::setRawBits(const int raw) {
 	this->rawValue_ = raw;
 }
 
-float	Fixed::toFloat() const {
+float	Fixed::toFloat( void ) const {
 	return static_cast<float>(this->rawValue_) / (1 << fractionalBits_);
 }
 
-int	Fixed::toInt() const {
+int	Fixed::toInt( void ) const {
 	return this->rawValue_ >> fractionalBits_;
 }
 

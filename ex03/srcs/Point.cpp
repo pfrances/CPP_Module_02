@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:30:58 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 16:20:22 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:47:33 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ Fixed Point::getY( void ) const {
 }
 
 std::ostream& operator<<(std::ostream& o, Point const& rhs) {
-	o << "x=" << rhs.getX() << "y=" << rhs.getY();
+	o << "x=" << rhs.getX().toFloat() << " y=" << rhs.getY().toFloat();
 	return o;
 }
