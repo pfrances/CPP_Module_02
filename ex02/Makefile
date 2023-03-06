@@ -6,13 +6,13 @@
 #    By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/26 11:07:21 by pfrances          #+#    #+#              #
-#    Updated: 2023/03/04 15:13:49 by pfrances         ###   ########.fr        #
+#    Updated: 2023/03/06 14:59:43 by pfrances         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = FixedPoint
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address -MMD -MP
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g -fsanitize=address -MMD -MP
 INCLUDE = -I includes
 
 SRCS_DIR = ./srcs
