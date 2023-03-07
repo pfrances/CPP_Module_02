@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 21:37:52 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:44:08 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,19 @@ Fixed& Fixed::operator=(const Fixed& other) {
 }
 
 Fixed Fixed::operator+(const Fixed& other) const {
-	_Float64 result = this->toFloat() + other.toFloat();
+	long result = this->toFloat() + other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }
 
 Fixed Fixed::operator-(const Fixed& other) const {
-	_Float64 result = this->toFloat() - other.toFloat();
+	long result = this->toFloat() - other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }
 
 Fixed Fixed::operator*(const Fixed& other) const {
-	_Float64 result = this->toFloat() * other.toFloat();
+	long result = this->toFloat() * other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }
