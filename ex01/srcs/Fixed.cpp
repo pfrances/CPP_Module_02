@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 21:37:34 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:37:25 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Fixed::Fixed(const float value)
 		integerPart -= 1;
 		fractionalPart = 1 + fractionalPart;
 	}
-	
+
 	int fixedFractionalPart = 0;
 	float fraction = 0.5f;
 	for (int i = 0; i < fractionalBits_; ++i) {
@@ -84,7 +84,12 @@ float	Fixed::toFloat( void ) const {
 }
 
 int	Fixed::toInt( void ) const {
-	return this->rawValue_ >> fractionalBits_;
+	int temp = (this->rawValue_ >> fractionalBits_);
+
+	if (temp < 0) {
+		temp++;
+	}
+	return temp;
 }
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& fixed) {

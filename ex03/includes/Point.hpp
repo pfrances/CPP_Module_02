@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:27:40 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 15:55:43 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/09 10:23:34 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ private:
 
 std::ostream&	operator<<(std::ostream& os, const Point& Point);
 
-#endif
-
 bool	bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif

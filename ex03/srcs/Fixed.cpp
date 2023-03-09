@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/07 15:44:21 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:38:56 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,12 @@ float Fixed::toFloat( void ) const {
 }
 
 int Fixed::toInt( void ) const {
-	return this->rawValue_ >> fractionalBits_;
+	int temp = (this->rawValue_ >> fractionalBits_);
+
+	if (temp < 0) {
+		temp++;
+	}
+	return temp;
 }
 
 Fixed& Fixed::operator=(const Fixed& other) {
@@ -78,19 +83,19 @@ Fixed& Fixed::operator=(const Fixed& other) {
 }
 
 Fixed Fixed::operator+(const Fixed& other) const {
-	long result = this->toFloat() + other.toFloat();
+	double result = this->toFloat() + other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }
 
 Fixed Fixed::operator-(const Fixed& other) const {
-	long result = this->toFloat() - other.toFloat();
+	double result = this->toFloat() - other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }
 
 Fixed Fixed::operator*(const Fixed& other) const {
-	long result = this->toFloat() * other.toFloat();
+	double result = this->toFloat() * other.toFloat();
 
 	return Fixed(static_cast<float>(result));
 }

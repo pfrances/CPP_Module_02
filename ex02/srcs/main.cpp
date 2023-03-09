@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 21:38:04 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/04 21:40:09 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/09 10:05:54 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main( void ) {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed b( Fixed( 5.15f ) * Fixed( 2 ) );
 	Fixed c( 1 + 1.754f );
 	Fixed d( -15.65f * 2);
 
